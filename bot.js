@@ -6,34 +6,34 @@ var adminprefix = 'c'
 const developers = ["444972118174859264","id"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!devs.includes(message.author.id)) return;
- 
-  if (message.content.startsWith(adminprefix + 'pl')) {
+      if (!developers.includes(message.author.id)) return;
+      
+  if (message.content.startsWith(adminprefix + 'setg')) {
     client.user.setGame(argresult);
-      message.channel.send(`**✅ تم تغيير الحالة بنجاح ${argresult}**`)
-  } else
-     if (message.content === (adminprefix + "lev")) {
-    message.guild.leave();
-  } else
-  if (message.content.startsWith(adminprefix + 'w')) {
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+     if (message.content === (adminprefix + "leave")) {
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith(adminprefix + 'setw')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`**✅ تم تغيير الحالة بنجاح ${argresult}**`)
-  } else
-  if (message.content.startsWith(adminprefix + 'l')) {
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'setl')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**✅ تم تغيير الحالة بنجاح ${argresult}**`)
-  } else
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/idk");
-      message.channel.send(`**✅ تم تغيير الحالة بنجاح **`)
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'sets')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/dream");
+      message.channel.send(`**✅**`)
   }
-  if (message.content.startsWith(adminprefix + 'name')) {
+  if (message.content.startsWith(adminprefix + 'setname')) {
   client.user.setUsername(argresult).then
-      message.channel.send(`**✅ تم تغير الاسم بنجاح ${argresult}** `)
+      message.channel.send(`Changing The Name To ..**${argresult}** `)
 } else
-if (message.content.startsWith(adminprefix + 'av')) {
+if (message.content.startsWith(adminprefix + 'setava')) {
   client.user.setAvatar(argresult);
-    message.channel.send(`**✅ تم تغير الصور بنجاح ${argresult}** `);
+    message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
 });
 
